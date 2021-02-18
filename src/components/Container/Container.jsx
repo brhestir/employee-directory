@@ -26,11 +26,6 @@ class Container extends Component {
 
   handleBtnClick = (e) => {
     console.log("clicked");
-    this.setState({
-      simsSorted: this.state.sims.sort(function (a, b) {
-        return a.email - b.value;
-      }),
-    });
   };
 
   compare = (a, b) => {};
