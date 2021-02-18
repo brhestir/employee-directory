@@ -40,18 +40,20 @@ class Container extends Component {
 
   handleBtnClick = (e) => {
     console.log("Sorting");
-    function compareForSort(a, b) {
+    const compareForSort = (a, b) => {
       const lastA = a.name.last.toUpperCase();
       const lastB = b.name.last.toUpperCase();
       let sortDirection = 1;
+      let setDirection = this.state.direction * -1;
+      this.setState({ direction: setDirection });
 
       if (lastA > lastB) {
-        sortDirection = 1;
+        sortDirection = 1 * setDirection;
       } else if (lastA < lastB) {
-        sortDirection = -1;
+        sortDirection = -1 * setDirection;
       }
       return sortDirection;
-    }
+    };
 
     const simsSortedBuffer = this.state.sims.sort(compareForSort);
     this.setState({ simsFiltered: simsSortedBuffer });
