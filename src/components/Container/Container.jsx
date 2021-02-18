@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Axios from "axios";
 import ListviewHeaderEl from "../ListviewHeaderEl/ListviewHeaderEl";
 import ListviewRowEl from "../ListviewRowEl/ListviewRowEl";
+import RipJumbotron from "../RipJumbotron/RipJumbotron";
 
 class Container extends Component {
   state = {
@@ -37,6 +38,7 @@ class Container extends Component {
   render() {
     return (
       <div>
+        <RipJumbotron />
         <table className="table">
           <ListviewHeaderEl handleBtnClick={this.handleBtnClick} />
           <tbody>
