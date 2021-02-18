@@ -4,8 +4,6 @@
 
 Search, sort and view employees in React
 
-![https://github.com/brhestir/employee-directory/blob/main/LICENSE](https://shields.io/github/license/brhestir/employee-directory)
-
 ## Table of Contents
 
 - [employee-directory](#employee-directory)
