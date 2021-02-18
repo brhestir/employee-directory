@@ -3,7 +3,7 @@ import React from "react";
 const SearchForm = (props) => {
   return (
     <div>
-      <form className="bg-primary">
+      <form className="bg-primary p-2">
         <input
           type="text"
           className="form-control"

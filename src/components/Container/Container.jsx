@@ -10,10 +10,11 @@ class Container extends Component {
     sims: [],
     simsSorted: [],
     simsFiltered: [],
+    direction: 1,
   };
 
   componentDidMount() {
-    return Axios.get("https://randomuser.me/api/?results=10&nat=us")
+    return Axios.get("https://randomuser.me/api/?results=25&nat=us")
       .then((response) => {
         // if successful
         console.log(response);
@@ -38,7 +39,22 @@ class Container extends Component {
   };
 
   handleBtnClick = (e) => {
-    console.log("clicked");
+    console.log("Sorting");
+    function compareForSort(a, b) {
+      const lastA = a.name.last.toUpperCase();
+      const lastB = b.name.last.toUpperCase();
+      let sortDirection = 1;
+
+      if (lastA > lastB) {
+        sortDirection = 1;
+      } else if (lastA < lastB) {
+        sortDirection = -1;
+      }
+      return sortDirection;
+    }
+
+    const simsSortedBuffer = this.state.sims.sort(compareForSort);
+    this.setState({ simsFiltered: simsSortedBuffer });
   };
 
   render() {
