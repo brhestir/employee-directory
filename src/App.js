@@ -1,13 +1,14 @@
-import logo from './logo.svg';
+import E8 from './E8Petrie.svg';
 import './App.css';
+import Container from "./components/Container/Container"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={E8} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Behold, it moves
         </p>
         <a
           className="App-link"
@@ -15,8 +16,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          woah man
         </a>
+				<Container />
       </header>
     </div>
   );
