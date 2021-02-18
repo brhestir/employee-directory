@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import Axios from "axios";
+import ListviewHeaderEl from "../ListviewHeaderEl/ListviewHeaderEl";
+import ListviewRowEl from "../ListviewRowEl/ListviewRowEl";
 
 class Container extends Component {
   state = {
     sims: [],
+    simsSorted: [],
   };
 
   componentDidMount() {
-    return Axios.get("https://randomuser.me/api/?results=5")
+    return Axios.get("https://randomuser.me/api/?results=10&nat=us")
       .then((response) => {
         // if successful
         console.log(response);
@@ -20,30 +23,30 @@ class Container extends Component {
       });
   }
 
+  handleBtnClick = (e) => {
+    console.log("clicked");
+    this.setState({
+      simsSorted: this.state.sims.sort(function (a, b) {
+        return a.email - b.value;
+      }),
+    });
+  };
+
+  compare = (a, b) => {};
+
   render() {
     return (
       <div>
         <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Email</th>
-            </tr>
-          </thead>
+          <ListviewHeaderEl handleBtnClick={this.handleBtnClick} />
           <tbody>
             {this.state.sims.map((simInstance, index) => {
-              <tr>
-                <th scope="row">1</th>
-                <td>{simInstance.name.first}</td>
-                <td>{simInstance.name.last}</td>
-                <td>{simInstance.email}</td>
-              </tr>;
+              return (
+                <ListviewRowEl {...simInstance} key={index} index={index} />
+              );
             })}
           </tbody>
         </table>
-        <p>{this.state.users}</p>
       </div>
     );
   }
