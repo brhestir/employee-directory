@@ -3,7 +3,7 @@ import React from "react";
 const ListviewHeaderEl = (props) => {
   return (
     <>
-      <thead>
+      <thead className="bg-secondary bg-gradient">
         <tr>
           <th scope="col">
             <button

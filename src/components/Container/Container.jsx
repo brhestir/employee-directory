@@ -3,11 +3,13 @@ import Axios from "axios";
 import ListviewHeaderEl from "../ListviewHeaderEl/ListviewHeaderEl";
 import ListviewRowEl from "../ListviewRowEl/ListviewRowEl";
 import RipJumbotron from "../RipJumbotron/RipJumbotron";
+import SearchForm from "../SearchForm/SearchForm";
 
 class Container extends Component {
   state = {
     sims: [],
     simsSorted: [],
+    simsFiltered: [],
   };
 
   componentDidMount() {
@@ -16,6 +18,7 @@ class Container extends Component {
         // if successful
         console.log(response);
         this.setState({ sims: response.data.results });
+        this.setState({ simsFiltered: this.state.sims });
         console.log(this.state);
       })
       .catch((err) => {
@@ -24,20 +27,29 @@ class Container extends Component {
       });
   }
 
+  handleInputChange = (e) => {
+    const filterBuffer = e.target.value;
+    const filteredSimsBuffer = this.state.sims.filter((simInstance) => {
+      return simInstance.name.last
+        .toLowerCase()
+        .includes(filterBuffer.toLowerCase());
+    });
+    this.setState({ simsFiltered: filteredSimsBuffer });
+  };
+
   handleBtnClick = (e) => {
     console.log("clicked");
   };
-
-  compare = (a, b) => {};
 
   render() {
     return (
       <div>
         <RipJumbotron />
+        <SearchForm onChange={this.handleInputChange} />
         <table className="table">
           <ListviewHeaderEl handleBtnClick={this.handleBtnClick} />
           <tbody>
-            {this.state.sims.map((simInstance, index) => {
+            {this.state.simsFiltered.map((simInstance, index) => {
               return (
                 <ListviewRowEl {...simInstance} key={index} index={index} />
               );
