@@ -6,56 +6,31 @@ const ListviewHeaderEl = (props) => {
       <thead className="bg-secondary bg-gradient">
         <tr>
           <th scope="col">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={props.handleBtnClick}
-            >
-              #
-            </button>
-          </th>
-          <th scope="col">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={props.handleBtnClick}
-            >
+            <button type="button" className="btn btn-outline-dark">
               Photo
             </button>
           </th>
           <th scope="col">
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-outline-dark"
               onClick={props.handleBtnClick}
             >
               Name
             </button>
           </th>
           <th scope="col">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={props.handleBtnClick}
-            >
+            <button type="button" className="btn btn-outline-dark">
               Phone
             </button>
           </th>
           <th scope="col">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={props.handleBtnClick}
-            >
+            <button type="button" className="btn btn-outline-dark">
               Email
             </button>
           </th>
           <th scope="col">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={props.handleBtnClick}
-            >
+            <button type="button" className="btn btn-outline-dark">
               DOB
             </button>
           </th>

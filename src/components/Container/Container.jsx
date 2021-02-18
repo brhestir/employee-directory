@@ -55,7 +55,7 @@ class Container extends Component {
       return sortDirection;
     };
 
-    const simsSortedBuffer = this.state.sims.sort(compareForSort);
+    const simsSortedBuffer = this.state.simsFiltered.sort(compareForSort);
     this.setState({ simsFiltered: simsSortedBuffer });
   };
 
@@ -68,9 +68,7 @@ class Container extends Component {
           <ListviewHeaderEl handleBtnClick={this.handleBtnClick} />
           <tbody>
             {this.state.simsFiltered.map((simInstance, index) => {
-              return (
-                <ListviewRowEl {...simInstance} key={index} index={index} />
-              );
+              return <ListviewRowEl {...simInstance} key={index} />;
             })}
           </tbody>
         </table>

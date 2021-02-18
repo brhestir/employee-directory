@@ -1,7 +1,5 @@
 # employee-directory
 
-# ![https://github.com/brhestir/employee-directory/blob/main/README.md](https://badgen.net/badge/employee/directory/blue?icon=github&scale=5)
-
 Search, sort and view employees in React
 
 ## Table of Contents
@@ -18,7 +16,7 @@ Search, sort and view employees in React
 
 ![](./assets/images/employee-directory.png)
 
-This is a simple React-based app which uses the randomuser API to generate a list of simulated employees, which one can filter and sort by last name.
+This is a simple React-based app which uses the Randomuser.me API to generate a list of simulated employees, which one can search and sort by last name.
 
 [Deployed GitHub Pages Site](https://brhestir.github.io/employee-directory/)
 

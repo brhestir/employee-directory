@@ -3,7 +3,7 @@ import React from "react";
 const RipJumbotron = () => {
   return (
     <>
-      <div className="bg-primary bg-gradient">
+      <div className="bg-success bg-gradient">
         <div className="row">
           <div className="col-12">
             <div className="d-flex justify-content-center">

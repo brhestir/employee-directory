@@ -4,7 +4,6 @@ const ListviewRowEl = (props) => {
   return (
     <>
       <tr className="bg-light">
-        <th>{props.index}</th>
         <td>
           <img src={props.picture.thumbnail} alt={props.name.last} />
         </td>
